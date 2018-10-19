@@ -33,4 +33,9 @@ before install:
 task test, "Test nats":
     exec "nim c -d:nimDebugDlOpen tests/natstest.nim"
     withDir("nats"):
+      exec "kill `cat /tmp/nim-nats-test.pid` > /dev/null 2>&1; echo Old gnatsd cleanup done." # sometimes things go wrong, try to clean up
+      exec "gnatsd --port 12345 --debug --trace --pid /tmp/nim-nats-test.pid &"
+      exec "sleep 1"
       exec ldpath & "../tests/natstest" & ext
+      exec "sleep 1; kill $(cat /tmp/nim-nats-test.pid)"
+      rmFile("/tmp/nim-nats-test.pid")

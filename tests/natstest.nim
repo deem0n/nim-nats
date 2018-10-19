@@ -7,7 +7,6 @@
 
 import unittest
 import strformat
-import asyncdispatch
 import nats
 
 var nc: ptr natsConnection 

@@ -35,7 +35,7 @@ task setup, "Download and generate":
 task test, "Test nats":
 #    exec "nim c --passL:'-L/usr/local/lib -lnats_static' -d:nimDebugDlOpen tests/natstest.nim"
     exec "nim c -d:nimDebugDlOpen tests/natstest.nim"
-    withDir("nats"):
+    withDir("tests"):
       exec "kill `cat /tmp/nim-nats-test.pid` > /dev/null 2>&1; echo Old nats-server cleanup done." # sometimes things go wrong, try to clean up
       exec "nats-server --port 12345 --debug --trace --pid /tmp/nim-nats-test.pid &"
       exec "sleep 1"

@@ -1,8 +1,8 @@
-nim-nats is a [Nim](https://nim-lang.org/) wrapper for the [nats-c](https://github.com/nats-io/nats.c) library.
+nim-nats is a [Nim](https://nim-lang.org/) wrapper for the [nats.c](https://github.com/nats-io/nats.c) library.
 
 nim-nats is distributed as a [Nimble](https://github.com/nim-lang/nimble) package. nats.nim wrapper is generated with [nimgen](https://github.com/genotrance/nimgen) and [c2nim](https://github.com/nim-lang/c2nim/).
 
-nim-nats may be linked with dynamic nats-c lib which must be installed on the system and be available at runtime. You can link statically as well (see tests folder). On Mac OS X you can easily install lib with `brew install cnats`
+nim-nats may be linked with dynamic nats.c lib which must be installed on the system and be available at runtime. You can link statically as well (see tests folder). On Mac OS X you can easily install lib with `brew install cnats`
 
 Latest nim-nats version 3.x should work with NATS 3.x
 
@@ -41,7 +41,7 @@ could not load: libnats.so
 
 It happens if your system protobuf_c lib is outdated. For example, CentOS 7 has protobuf_c 1.0.x while current version is 1.3.x.
 It seems that recent cnats wants recent protobuf, which is not available on recent Linux distros, ops.
-To avoid dll hell I recomend to statically link against `libnats_static.a` (which is installed by default by `nats-c`).
+To avoid dll hell I recomend to statically link against `libnats_static.a` (which is installed by default by `nats.c`).
 But to make that possible you will need to compile static version of `protobuf_c.a` or pick it up from [cnats distribution](https://github.com/nats-io/cnats/tree/master/pbuf/lib).
 
 ```
@@ -74,7 +74,6 @@ __Testing__
 ```
  git clone https://github.com/deem0n/nim-nats
  cd nim-nats
- nimble setup
  nimble test
 ```
 
@@ -83,7 +82,7 @@ __Testing__
 
 __Development__
 
-You will need latest `nimgen`, which is not released. Also I probably will migrate to the nimterop one day. For now you can try to run `nimble setup`, which will download some `nats-c` headers from github and will run `nimgen` to convert headers to nim.
+You will need latest `nimgen`, which is not released. Also I probably will migrate to the nimterop one day. For now you can try to run `nimble setup`, which will download some `nats.c` headers from github and will run `nimgen` to convert headers to nim.
 
 ```
  nimble install nimgen@#HEAD
@@ -95,15 +94,16 @@ You will need latest `nimgen`, which is not released. Also I probably will migra
 
 __Credits__
 
-nim-nats wraps the cnats source code and all licensing terms of [cnats](https://github.com/nats-io/cnats/blob/master/LICENSE) apply to the usage of this package. cnats is licensed under Apache 2.0. All other code (i.e tests) in this repo is licensed under MIT license.
+nim-nats wraps the cnats source code and all licensing terms of [nats.c](https://github.com/nats-io/nats.c/blob/main/LICENSE) apply to the usage of this package. cnats is licensed under Apache 2.0. All other code (i.e tests) in this repo is licensed under MIT license.
 
 Credits go out to [c2nim](https://github.com/nim-lang/c2nim/) and to [nimgen](https://github.com/genotrance/nimgen) as well without which this package would be greatly limited in its abilities.
 
 __Future plans__
 
-1. Add Streaming NATS API
-2. More tests
-3. Examples of async API with callbacks (requires event loop on the nim side)
+1. Add JetStream NATS API
+2. Add KV
+3. More tests
+4. Examples of async API with callbacks (requires event loop on the nim side)
 
 __Feedback__
 

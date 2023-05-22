@@ -29,8 +29,8 @@ if detectOs(Linux):
 task setup, "Download and generate":
     exec cmd & " nimgen nats.cfg"
 
-before install:
-    setupTask()
+#before install:
+#    setupTask()
 
 task test, "Test nats":
 #    exec "nim c --passL:'-L/usr/local/lib -lnats_static' -d:nimDebugDlOpen tests/natstest.nim"

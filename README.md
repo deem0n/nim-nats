@@ -2,7 +2,7 @@ nim-nats is a [Nim](https://nim-lang.org/) wrapper for the [nats.c](https://gith
 
 nim-nats is distributed as a [Nimble](https://github.com/nim-lang/nimble) package. nats.nim wrapper is generated with [nimgen](https://github.com/genotrance/nimgen) and [c2nim](https://github.com/nim-lang/c2nim/).
 
-nim-nats may be linked with dynamic nats.c lib which must be installed on the system and be available at runtime. You can link statically as well (see tests folder). On Mac OS X you can easily install lib with `brew install cnats`
+nim-nats may be linked with dynamic nats.c lib which must be installed on the system and be available at runtime. You can link statically as well with `nim c --passL:'-L/usr/local/lib -lnats_static' yourcode.nim`. On Mac OS X you can easily install lib with `brew install cnats`
 
 Latest nim-nats version 3.x should work with NATS 3.x
 
@@ -18,7 +18,7 @@ nim-nats can be installed via [Nimble](https://github.com/nim-lang/nimble):
  nimble install -y
 ```
 
-This will download, wrap and install nim-nats in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
+This will download and install nim-nats in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
 
 __Usage__
 
@@ -74,6 +74,7 @@ __Testing__
 ```
  git clone https://github.com/deem0n/nim-nats
  cd nim-nats
+ nimble install -y
  nimble test
 ```
 

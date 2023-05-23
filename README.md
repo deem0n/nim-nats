@@ -13,10 +13,17 @@ __Installation__
 nim-nats can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 ```
+nimble install nats
+```
+
+You can also install from the github repo:
+
+```
  git clone https://github.com/deem0n/nim-nats
  cd nim-nats
  nimble install -y
 ```
+
 
 This will download and install nim-nats in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
 
@@ -74,7 +81,6 @@ __Testing__
 ```
  git clone https://github.com/deem0n/nim-nats
  cd nim-nats
- nimble install -y
  nimble test
 ```
 
@@ -108,4 +114,4 @@ __Future plans__
 
 __Feedback__
 
-nim-nats is a work in progress and any feedback or suggestions are welcome. It is hosted on [GitHub](https://github.com/deem0n/nim-nats) with an MIT license so issues, forks and PRs are most appreciated.
+nim-nats is a work in progress and any feedback or suggestions are welcome. It is hosted on [GitHub](https://github.com/deem0n/nim-nats) with a MIT license so issues, forks and PRs are most appreciated.

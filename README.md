@@ -4,7 +4,7 @@ nim-nats is distributed as a [Nimble](https://github.com/nim-lang/nimble) packag
 
 nim-nats may be linked with dynamic nats.c lib which must be installed on the system and be available at runtime. You can link statically as well with `nim c --passL:'-L/usr/local/lib -lnats_static' yourcode.nim`. On Mac OS X you can easily install lib with `brew install cnats`
 
-Latest nim-nats version 3.x should work with NATS 3.x
+Latest nim-nats version 3.x should work with NATS client library nats.c 3.x
 
 JetStream and Key-Value is not yet wrapped, but might be soon.
 
